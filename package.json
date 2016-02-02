@@ -1,0 +1,20 @@
+{
+  "name": "log-defer",
+  "version": "0.0.1",
+  "description": "Generate log object compatible with log-defer-viz, https://github.com/hoytech/Log-Defer-Viz",
+  "keywords": ["log", "format"],
+  "main": ".lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ioncache/log-defer.git"
+  },
+  "author": "Mark Jubenville <ioncache@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ioncache/log-defer/issues"
+  },
+  "homepage": "https://github.com/ioncache/log-defer"
+}
