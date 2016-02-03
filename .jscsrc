@@ -1,0 +1,85 @@
+{
+    "disallowMultipleVarDecl": true,
+    "disallowSpacesInFunctionExpression": {
+        "beforeOpeningRoundBrace": true
+    },
+    "disallowSpaceAfterObjectKeys": true,
+    "disallowSpacesInAnonymousFunctionExpression": {
+        "beforeOpeningRoundBrace": true
+    },
+    "disallowMultipleLineBreaks": true,
+    "disallowTrailingWhitespace": true,
+    "disallowKeywordsOnNewLine": ["else"],
+    "disallowSpaceAfterPrefixUnaryOperators": true,
+    "disallowSpacesInFunctionExpression": {
+      "beforeOpeningRoundBrace": true
+    },
+    "disallowSpacesInsideParentheses": true,
+    "disallowTrailingComma": true,
+    "jsDoc": {
+      "checkAnnotations": "closurecompiler",
+      "checkParamNames": true,
+      "requireParamTypes": true,
+      "checkRedundantParams": true,
+      "checkReturnTypes": true,
+      "checkRedundantReturns": true,
+      "requireReturnTypes": true,
+      "checkTypes": true,
+      "checkRedundantAccess": true,
+      "requireNewlineAfterDescription": true,
+      "checkAnnotations": {
+        "preset": "jsdoc3", 
+        "extra": {
+          "ngdoc": true,
+          "restrict": true
+        }
+      }
+    },
+    "maxErrors": null,
+    "maximumLineLength": {
+    "value": 120,
+    "allExcept": ["comments", "regex"]
+    },
+    "requireCurlyBraces": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "try",
+        "catch"
+    ],
+    "requireLineFeedAtFileEnd": true,
+    "requireDotNotation": true,
+    "requireSemicolons": true,
+    "requireSpaceAfterBinaryOperators": true,
+    "requireSpaceAfterKeywords": [
+      "if",
+      "else",
+      "for",
+      "while",
+      "do",
+      "switch",
+      "return",
+      "try",
+      "catch"
+    ],
+    "requireSpaceBeforeBinaryOperators": [
+      "=", "+=", "-=", "*=", "/=", "%=", "<<=", ">>=", ">>>=",
+      "&=", "|=", "^=", "+=",
+
+      "+", "-", "*", "/", "%", "<<", ">>", ">>>", "&",
+      "|", "^", "&&", "||", "===", "==", ">=",
+      "<=", "<", ">", "!=", "!=="
+    ],
+    "requireSpaceBeforeBlockStatements": true,
+    "requireSpaceBeforeObjectValues": true,
+    "requireSpacesInConditionalExpression": true,
+    "requireSpacesInForStatement": true,
+    "requireSpacesInFunctionExpression": {
+        "beforeOpeningCurlyBrace": true
+    },
+    "validateIndentation": 2,
+    "validateOrderInObjectKeys": "asc",
+    "validateParameterSeparator": ", "
+}
