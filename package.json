@@ -7,9 +7,9 @@
     "format",
     "formatter"
   ],
-  "main": ".lib/log-defer.js",
+  "main": "lib/log-defer.js",
   "scripts": {
-    "test": "node test/test.js"
+    "test": "node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
