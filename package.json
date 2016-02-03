@@ -2,10 +2,10 @@
   "name": "log-defer",
   "version": "0.0.1",
   "description": "Generate log object compatible with log-defer-viz, https://github.com/hoytech/Log-Defer-Viz",
-  "keywords": ["log", "format"],
-  "main": ".lib/index.js",
+  "keywords": ["log", "format", "formatter"],
+  "main": ".lib/log-defer.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests/test.js"
   },
   "repository": {
     "type": "git",

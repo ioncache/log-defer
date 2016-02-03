@@ -1,6 +1,6 @@
 'use strict';
 
-var log = require('../lib/index');
+var log = require('../lib/log-defer');
 
 console.log(log);
 
