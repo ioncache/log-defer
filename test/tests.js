@@ -13,9 +13,6 @@ describe('log.error', function() {
     var output = log.finalizeLog();
     var outputObj = JSON.parse(output);
 
-    console.log(output);
-    console.log(outputObj);
-
-    expect(outputObj.level).to.equal(10);
+    expect(outputObj.logs[0][1]).to.equal(10);
   });
 });
