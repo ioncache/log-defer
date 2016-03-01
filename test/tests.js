@@ -16,7 +16,7 @@ describe('function \'addMessage\':', function() {
     var message = 'message adding test';
 
     // Act
-    log.addMessage({ message: message });
+    log.addMessage(message);
 
     // Assert
     expect(log._self.message.logs.length).to.equal(1);
@@ -29,28 +29,14 @@ describe('function \'addMessage\':', function() {
       var message = 'setting level test';
 
       // Act
-      log.addMessage({ level: 10, message: message });
+      log.addMessage(message, 10);
 
       // Assert
       expect(log._self.message.logs[0][1]).to.equal(10);
     });
   });
 
-  describe('when there is a data option', function() {
-    it('should set the data object on the log', function() {
-      // Arrange
-      var data = { foo: 'bar' };
-      var message = 'setting data';
-
-      // Act
-      log.addMessage({ data: data, message: message });
-
-      // Assert
-      expect(log._self.message.logs[0][3]).to.eql(data);
-    });
-  });
-
-  describe('when there is a data option and extra data arguments', function() {
+  describe('when there is a data options', function() {
     it('should combine all into the log', function() {
       // Arrange
       var data = { foo: 'bar' };
@@ -59,25 +45,10 @@ describe('function \'addMessage\':', function() {
       var message = 'setting data';
 
       // Act
-      log.addMessage({ data: data, message: message }, data2, data3);
+      log.addMessage(message, data, data2, data3);
 
       // Assert
       expect(log._self.message.logs[0][3]).to.eql(_.extend({}, data, data2, data3));
-    });
-  });
-
-  describe('when there are extra data arguments and no data option', function() {
-    it('should combine all into the log', function() {
-      // Arrange
-      var data2 = { bar: 'baz' };
-      var data3 = { baz: 'meh' };
-      var message = 'setting data';
-
-      // Act
-      log.addMessage({ message: message }, data2, data3);
-
-      // Assert
-      expect(log._self.message.logs[0][3]).to.eql(_.extend({}, data2, data3));
     });
   });
 });
@@ -116,7 +87,7 @@ describe('function \'timer\':', function() {
 describe('function \'finalizeLog\':', function() {
   it('should return a json string', function() {
     // Act
-    log.info({ message: 'this is a test' });
+    log.info('this is a test');
     var output = log.finalizeLog();
 
     // Assert
@@ -126,7 +97,7 @@ describe('function \'finalizeLog\':', function() {
 
   it('should clear the current log', function() {
     // Act
-    log.info({ message: 'this is a test' });
+    log.info('this is a test');
     log.finalizeLog();
 
     // Assert
