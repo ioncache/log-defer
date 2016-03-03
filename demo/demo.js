@@ -45,6 +45,13 @@ setTimeout(function() {
 
 log.data({ quux: 'xyzzy', qux: 'corge' });
 
+// add some delay in so entire run time is at least a second
+var deferred4 = q.defer();
+deferreds.push(deferred4.promise);
+setTimeout(function() {
+  deferred4.resolve();
+}, 1000);
+
 q.all(deferreds).then(function() {
   log.timer('Log Messaging Demo'); // end the 'Log Messaging Demo' timer
   var output = log.finalizeLog(); // finalize the log, and return a json string of the log-defer
