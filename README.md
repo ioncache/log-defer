@@ -3,6 +3,7 @@ log-defer
 
 Description
 -----------
+Generate log object compatible with [log-defer-viz](https://github.com/hoytech/Log-Defer-Viz)
 
 log-defer is a module that creates structured logs. The log-defer documentation explains structured logging and its benefits over ad-hoc logging.
 
