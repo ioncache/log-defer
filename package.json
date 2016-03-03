@@ -1,6 +1,6 @@
 {
   "name": "log-defer",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Generate log object compatible with log-defer-viz, https://github.com/hoytech/Log-Defer-Viz",
   "keywords": [
     "log",
