@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <style>
+      div#display {
+        font-family: monospace;
+      }
+    </style>
+    <script src="../node_modules/q/Q.js"></script>
+    <script src="../lib/log-defer.js"></script>
+    <script>
+      'use strict';
+
+      var Q = window.Q || undefined;
+      var logDefer = window.logDefer || undefined;
+
+      if (Q && logDefer) {
+        var deferreds = [];
+
+        logDefer.timer('Log Messaging Demo'); // begin a timer called 'Log Messaging Demo'
+
+        logDefer.info('Info level logging');
+        logDefer.warn('Warn level logging');
+        logDefer.error('Error level logging');
+        logDefer.timer('Interleaved, longer running timer');
+        logDefer.debug('Debug level logging');
+
+        logDefer.timer('async timer');
+        logDefer.info('starting async timer');
+        var deferred1 = Q.defer();
+        deferreds.push(deferred1.promise);
+        setTimeout(function() {
+          logDefer.info('finishing async timer');
+          logDefer.timer('async timer');
+          deferred1.resolve();
+        }, 375);
+
+        logDefer.timer('Short timer');
+        var deferred2 = Q.defer();
+        deferreds.push(deferred2);
+        setTimeout(function() {
+          logDefer.timer('Short timer');
+          deferred2.resolve();
+        }, 125);
+
+        logDefer.data({ bar: 'baz', foo: 'bar' }); // add to the data object in the log-defer
+        logDefer.warn('Warning with data!', { bar: 'baz', foo: 'bar' }, { barbaz: 'bazfoo', foobar: 'barbaz' });
+
+        var deferred3 = Q.defer();
+        deferreds.push(deferred3.promise);
+        setTimeout(function() {
+          logDefer.timer('Interleaved, longer running timer');
+          deferred3.resolve();
+        }, 700);
+
+        logDefer.data({ quux: 'xyzzy', qux: 'corge' });
+
+        // add some delay in so entire run time is at least a second
+        var deferred4 = Q.defer();
+        deferreds.push(deferred4.promise);
+        setTimeout(function() {
+          deferred4.resolve();
+        }, 1000);
+
+        Q.all(deferreds).then(function() {
+          logDefer.timer('Log Messaging Demo'); // end the 'Log Messaging Demo' timer
+          var output = logDefer.finalizeLog(); // finalize the log, and return a json string of the log-defer
+
+          var displayEl = document.getElementById('display');
+          displayEl.innerHTML = output;
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="display"></div>
+  </body>
+</html>
