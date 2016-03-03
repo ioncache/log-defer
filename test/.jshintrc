@@ -4,6 +4,7 @@
     "curly": true,
     "eqeqeq": true,
     "esnext": true,
+    "expr": true,
     "globals": {
         "after": true,
         "afterEach": true,
