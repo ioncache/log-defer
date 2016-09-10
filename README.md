@@ -12,12 +12,12 @@ This is the javascript implementation, full documentation for log-defer can be f
 Installation
 ------------
 
-```npm install log-defer```
+```bash npm install log-defer```
 
 Synopsis
 --------
 
-```
+``` javascript
 'use strict';
 
 var log = require('log-defer');
