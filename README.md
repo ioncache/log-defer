@@ -40,4 +40,22 @@ process.stdout.write(output);
 // should produce the following:
 // {"data":{"bar":"baz","foo":"bar"},"logs":[[0.0009999275207519531,30,"Info level logging"],[0.0009999275207519531,20,"Warn level logging"],[0.0009999275207519531,10,"Error level logging"],[0.0009999275207519531,40,"Debug level logging"],[0.0009999275207519531,20,"Warning with data!",{"bar":"baz","foo":"bar","barbaz":"bazfoo","foobar":"barbaz"}]],"start":1457018806.914,"timers":[["Log Messages",0.0009999275207519531,0.0009999275207519531]],"end":0.0019998550415039062}
 
+// if viewed using the log-defer-viz cli then it would format as follows:
+------ 2016-03-03 Thu 10:26:46.914 EST (1457018806.914) ------
+  | 0.001000 [ INFO] Info level logging
+  | 0.001000 [ WARN] Warn level logging
+  | 0.001000 [ERROR] Error level logging
+  | 0.001000 [DEBUG] Debug level logging
+  | 0.001000 [ WARN] Warning with data! [{"foo":"bar","bar":"baz","foobar":"barbaz","barbaz":"bazfoo"}]
+  |_0.002000 [END]
+
+ Log Messages                                                                                                                                                                                                                                                                         X
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+times in ms                                                                                                                                                                                                                                                                           1.0
+
+  Data:
+{
+   "bar" : "baz",
+   "foo" : "bar"
+}
 ```
