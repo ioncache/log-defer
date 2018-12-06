@@ -14,6 +14,10 @@ Installation
 
 ```npm install log-defer```
 
+or
+
+```bower install log-defer```
+
 Synopsis
 --------
 
