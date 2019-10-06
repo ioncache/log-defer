@@ -35,3 +35,6 @@ jobs:
 
       # run tests!
       - run: yarn test
+
+      # create coverage report
+      - run: yarn run report-coverage
