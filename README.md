@@ -1,6 +1,8 @@
 log-defer
 =========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ioncache/log-defer.svg)](https://greenkeeper.io/)
+
 Description
 -----------
 Generate log object compatible with [log-defer-viz](https://github.com/hoytech/Log-Defer-Viz)
