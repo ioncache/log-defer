@@ -1,7 +1,7 @@
 log-defer
 =========
 
-[![CircleCI](https://circleci.com/gh/ioncache/log-defer.svg?style=svg)](https://circleci.com/gh/ioncache/log-defer) [![Greenkeeper badge](https://badges.greenkeeper.io/ioncache/log-defer.svg)](https://greenkeeper.io/) [![codecov](https://codecov.io/gh/ioncache/log-defer/branch/master/graph/badge.svg)](https://codecov.io/gh/ioncache/log-defer)
+[![CircleCI](https://circleci.com/gh/ioncache/log-defer.svg?style=svg)](https://circleci.com/gh/ioncache/log-defer) [![Greenkeeper badge](https://badges.greenkeeper.io/ioncache/log-defer.svg)](https://greenkeeper.io/) [![Known Vulnerabilities](https://snyk.io//test/github/ioncache/log-defer/badge.svg?targetFile=package.json)](https://snyk.io//test/github/ioncache/log-defer?targetFile=package.json) [![codecov](https://codecov.io/gh/ioncache/log-defer/branch/master/graph/badge.svg)](https://codecov.io/gh/ioncache/log-defer)
 
 
 Description
