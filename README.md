@@ -1,7 +1,8 @@
 log-defer
 =========
 
-[![CircleCI](https://circleci.com/gh/ioncache/log-defer.svg?style=svg)](https://circleci.com/gh/ioncache/log-defer) [![Greenkeeper badge](https://badges.greenkeeper.io/ioncache/log-defer.svg)](https://greenkeeper.io/)
+[![CircleCI](https://circleci.com/gh/ioncache/log-defer.svg?style=svg)](https://circleci.com/gh/ioncache/log-defer) [![Greenkeeper badge](https://badges.greenkeeper.io/ioncache/log-defer.svg)](https://greenkeeper.io/) [![codecov](https://codecov.io/gh/ioncache/log-defer/branch/master/graph/badge.svg)](https://codecov.io/gh/ioncache/log-defer)
+
 
 Description
 -----------
