@@ -9,6 +9,7 @@
   ],
   "main": "lib/log-defer.js",
   "scripts": {
+    "report-coverage": "npx nyc report --reporter=text-lcov > coverage.lcov && npx codecov",
     "test": "npx nyc npx mocha",
     "test_only": "npx mocha"
   },
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/ioncache/log-defer",
   "devDependencies": {
     "chai": "^4.2.0",
+    "codecov": "^3.6.1",
     "lodash": "^4.5.1",
     "mocha": "^6.2.1",
     "nyc": "^14.1.1",

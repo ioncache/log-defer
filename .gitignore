@@ -2,6 +2,7 @@
 *.bak
 *.swp
 .DS_Store
+coverage.lcov
 
 # folders
 .nyc_output
