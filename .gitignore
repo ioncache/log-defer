@@ -1,6 +1,10 @@
+# files
 *.bak
 *.swp
 .DS_Store
+
+# folders
+.nyc_output
 .tmp
 node_modules
 npm-debug.log

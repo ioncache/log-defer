@@ -9,7 +9,8 @@
   ],
   "main": "lib/log-defer.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha"
+    "test": "npx nyc npx mocha",
+    "test_only": "npx mocha"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "chai": "^4.2.0",
     "lodash": "^4.5.1",
     "mocha": "^6.2.1",
+    "nyc": "^14.1.1",
     "q": "^1.4.1"
   }
 }
