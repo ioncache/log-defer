@@ -18,7 +18,7 @@ npm install log-defer
 
 or
 
-```bsh
+```bash
 bower install log-defer
 ```
 
