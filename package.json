@@ -24,11 +24,11 @@
   },
   "homepage": "https://github.com/ioncache/log-defer",
   "devDependencies": {
-    "chai": "^4.2.0",
-    "codecov": "^3.6.5",
-    "lodash": "^4.5.1",
-    "mocha": "^8.0.1",
-    "nyc": "^15.0.0",
-    "q": "^1.4.1"
+    "chai": "^4.3.4",
+    "codecov": "^3.8.2",
+    "lodash": "^4.17.21",
+    "mocha": "^9.0.0",
+    "nyc": "^15.1.0",
+    "q": "^1.5.1"
   }
 }
