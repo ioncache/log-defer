@@ -9,16 +9,10 @@
   ],
   "main": "lib/log-defer.js",
   "scripts": {
+    "prepare": "husky install",
     "report-coverage": "npx nyc report --reporter=text-lcov > coverage.lcov && npx codecov",
     "test": "npx nyc npx mocha",
-    "test_only": "npx mocha",
-    "prepare": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged",
-      "pre-push": "yarn test"
-    }
+    "test_only": "npx mocha"
   },
   "repository": {
     "type": "git",
