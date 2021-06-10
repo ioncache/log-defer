@@ -1,30 +1,30 @@
-log-defer
-=========
+# log-defer
 
-[![CircleCI](https://circleci.com/gh/ioncache/log-defer.svg?style=svg)](https://circleci.com/gh/ioncache/log-defer) [![Greenkeeper badge](https://badges.greenkeeper.io/ioncache/log-defer.svg)](https://greenkeeper.io/) [![Known Vulnerabilities](https://snyk.io//test/github/ioncache/log-defer/badge.svg?targetFile=package.json)](https://snyk.io//test/github/ioncache/log-defer?targetFile=package.json) [![codecov](https://codecov.io/gh/ioncache/log-defer/branch/main/graph/badge.svg)](https://codecov.io/gh/ioncache/log-defer)
+![Unit Tests](https://github.com/ioncache/log-defer/actions/workflows/nodejs.yml/badge.svg) [![codecov](https://codecov.io/gh/ioncache/log-defer/branch/main/graph/badge.svg)](https://codecov.io/gh/ioncache/log-defer)
 
+## Description
 
-Description
------------
 Generate log object compatible with [log-defer-viz](https://github.com/hoytech/Log-Defer-Viz)
 
 log-defer is a module that creates structured logs. The log-defer documentation explains structured logging and its benefits over ad-hoc logging.
 
-This is the javascript implementation, full documentation for log-defer can be found at https://metacpan.org/pod/Log::Defer
+This is the javascript implementation, full documentation for log-defer can be found at <https://metacpan.org/pod/Log::Defer>
 
-Installation
-------------
+## Installation
 
-```npm install log-defer```
+``` bash
+npm install log-defer
+```
 
 or
 
-```bower install log-defer```
+```bsh
+bower install log-defer
+```
 
-Synopsis
---------
+## Synopsis
 
-``` javascript
+```javascript
 'use strict';
 
 var log = require('log-defer');
@@ -43,11 +43,17 @@ log.warn('Warning with data!', { bar: 'baz', foo: 'bar' }, { barbaz: 'bazfoo', f
 var output = log.finalizeLog(); // finalize the log, and return a json string of the log-defer
 
 process.stdout.write(output);
+```
 
-// should produce the following:
-// {"data":{"bar":"baz","foo":"bar"},"logs":[[0.0009999275207519531,30,"Info level logging"],[0.0009999275207519531,20,"Warn level logging"],[0.0009999275207519531,10,"Error level logging"],[0.0009999275207519531,40,"Debug level logging"],[0.0009999275207519531,20,"Warning with data!",{"bar":"baz","foo":"bar","barbaz":"bazfoo","foobar":"barbaz"}]],"start":1457018806.914,"timers":[["Log Messages",0.0009999275207519531,0.0009999275207519531]],"end":0.0019998550415039062}
+The above code should produce the following output:
 
-// if viewed using the log-defer-viz cli then it would format as follows:
+```bash
+{"data":{"bar":"baz","foo":"bar"},"logs":[[0.0009999275207519531,30,"Info level logging"],[0.0009999275207519531,20,"Warn level logging"],[0.0009999275207519531,10,"Error level logging"],[0.0009999275207519531,40,"Debug level logging"],[0.0009999275207519531,20,"Warning with data!",{"bar":"baz","foo":"bar","barbaz":"bazfoo","foobar":"barbaz"}]],"start":1457018806.914,"timers":[["Log Messages",0.0009999275207519531,0.0009999275207519531]],"end":0.0019998550415039062}
+```
+
+If viewed using the log-defer-viz cli then it would format as follows:
+
+```bash
 ------ 2016-03-03 Thu 10:26:46.914 EST (1457018806.914) ------
   | 0.001000 [ INFO] Info level logging
   | 0.001000 [ WARN] Warn level logging
