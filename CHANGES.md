@@ -1,5 +1,13 @@
 # log-defer Change Log
 
+## 1.0.0 - 2021-06-10
+
+Updated:
+
+- numerous dependency updates
+- removed node 10.x from automatic tests
+  - due to dependency updates, the code will likely no longer work in node 10.x
+
 ## 0.0.8 - 2020-07-09
 
 Updated:
