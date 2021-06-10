@@ -1,5 +1,13 @@
 # log-defer Change Log
 
+## 1.0.0 - 2021-06-10
+
+Updated:
+
+- numerous dependency updates
+- removed node 10.x from automated tests
+  - due to dev dependency updates, the unit tests no longer pass in node 10.x, but the code itself has not changed so it should still run
+
 ## 0.0.8 - 2020-07-09
 
 Updated:
