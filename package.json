@@ -8,6 +8,9 @@
     "formatter"
   ],
   "main": "lib/log-defer.js",
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
     "prepare": "husky install",
     "report-coverage": "npx nyc report --reporter=text-lcov > coverage.lcov && npx codecov",
