@@ -1,6 +1,6 @@
 # log-defer
 
-![Unit Tests](https://github.com/ioncache/log-defer/actions/workflows/nodejs.yml/badge.svg) [![codecov](https://codecov.io/gh/ioncache/log-defer/branch/main/graph/badge.svg)](https://codecov.io/gh/ioncache/log-defer)
+![Unit Tests](https://github.com/ioncache/log-defer/actions/workflows/nodejs.yml/badge.svg)
 
 ## Description
 
@@ -12,7 +12,7 @@ This is the javascript implementation, full documentation for log-defer can be f
 
 ## Installation
 
-``` bash
+```bash
 npm install log-defer
 ```
 

@@ -20,6 +20,5 @@ jobs:
         run: |
           yarn install
           yarn test
-          yarn run report-coverage
         env:
           CI: true
