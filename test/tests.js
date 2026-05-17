@@ -1,11 +1,14 @@
 'use strict';
 
 var _ = require('lodash');
-var chai = require('chai');
 var log = require('../lib/log-defer');
 var q = require('q');
 
-var expect = chai.expect;
+var expect;
+
+before(async function () {
+  ({ expect } = await import('chai'));
+});
 
 afterEach(function () {
   log.finalizeLog();
