@@ -9,3 +9,15 @@ coverage.lcov
 .tmp
 node_modules
 npm-debug.log
+
+# yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+.yarn/install-state.gz
+.yarn/unplugged
+
