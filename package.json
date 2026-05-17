@@ -9,7 +9,7 @@
   ],
   "main": "lib/log-defer.js",
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "scripts": {
     "prepare": "husky install",
