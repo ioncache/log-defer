@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/ioncache/log-defer",
   "devDependencies": {
-    "chai": "^4.3.4",
+    "chai": "^6.2.2",
     "husky": "^9.1.7",
     "lodash": "^4.18.1",
     "mocha": "^11.7.5",
