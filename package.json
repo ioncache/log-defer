@@ -13,7 +13,7 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "report-coverage": "npx nyc report --reporter=text-lcov > coverage.lcov && (npx codecov || true)",
+    "report-coverage": "npx nyc report --reporter=text-lcov > coverage.lcov && (npx codecov || echo 'Warning: Codecov upload failed; continuing CI')",
     "test": "npx nyc npx mocha",
     "test_only": "npx mocha"
   },
