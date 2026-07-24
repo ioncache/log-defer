@@ -81,6 +81,14 @@ describe("function 'addMessage':", function () {
       // Assert
       expect(log._self.message.logs[0][3]).to.eql(_.extend({}, data, data2));
     });
+
+    it('should ignore null data arguments', function () {
+      // Act
+      log.addMessage('setting null data', null);
+
+      // Assert
+      expect(log._self.message.logs[0].length).to.equal(3);
+    });
   });
 
   describe('when there is an invalid log message', function () {
@@ -135,6 +143,40 @@ describe("function 'timer':", function () {
       expect(log._self.message.timers[timerName].end).to.exist;
     });
   });
+
+  it('should support object prototype names', function () {
+    // Act
+    log.timer('__proto__');
+    log.timer('__proto__');
+
+    // Assert
+    expect(log._self.message.timers.__proto__.end).to.exist;
+  });
+
+  it('should sort timers by start time', function () {
+    // Arrange
+    log._self.message.timers = {
+      second: { name: 'second', start: 2, end: 3 },
+      first: { name: 'first', start: 1, end: 2 },
+    };
+
+    // Act
+    var output = JSON.parse(log.finalizeLog());
+
+    // Assert
+    expect(output.timers[0][0]).to.equal('first');
+    expect(output.timers[1][0]).to.equal('second');
+  });
+});
+
+describe("function 'data':", function () {
+  it('should ignore null data', function () {
+    // Act
+    log.data(null);
+
+    // Assert
+    expect(log._self.message.data).to.be.empty;
+  });
 });
 
 describe("function 'finalizeLog':", function () {
@@ -157,6 +199,68 @@ describe("function 'finalizeLog':", function () {
     expect(log._self.message.data).to.be.empty;
     expect(log._self.message.logs).to.be.empty;
     expect(log._self.message.timers).to.be.empty;
+  });
+
+  it('should reset the start time for the next log', function () {
+    // Arrange
+    log._self.message.start = 0;
+
+    // Act
+    log.finalizeLog();
+    log.info('next log');
+
+    // Assert
+    expect(log._self.message.logs[0][0]).to.be.lessThan(1);
+  });
+
+  it('should stringify circular data', function () {
+    // Arrange
+    var data = {};
+    data.self = data;
+    log.data({ data: data });
+
+    // Act
+    var output = JSON.parse(log.finalizeLog());
+
+    // Assert
+    expect(output.data.data.self).to.equal('[object Object]');
+  });
+
+  it('should preserve repeated non-circular data', function () {
+    // Arrange
+    var data = { value: 'same object' };
+    log.data({ first: data, second: data });
+
+    // Act
+    var output = JSON.parse(log.finalizeLog());
+
+    // Assert
+    expect(output.data.first).to.eql(data);
+    expect(output.data.second).to.eql(data);
+  });
+});
+
+describe("function 'create':", function () {
+  it('should create isolated loggers', function () {
+    // Arrange
+    var first = log.create();
+    var second = log.create();
+
+    // Act
+    first.info('first');
+    first.data({ logger: 'first' });
+    first.timer('first timer');
+    second.info('second');
+    second.data({ logger: 'second' });
+    second.timer('second timer');
+
+    // Assert
+    expect(first._self.message.logs[0][2]).to.equal('first');
+    expect(second._self.message.logs[0][2]).to.equal('second');
+    expect(first._self.message.data.logger).to.equal('first');
+    expect(second._self.message.data.logger).to.equal('second');
+    expect(first._self.message.timers['first timer']).to.exist;
+    expect(second._self.message.timers['first timer']).to.not.exist;
   });
 });
 
@@ -250,13 +354,13 @@ describe('multiple logs, timers, and data', function () {
     log.data({ quux: 'xyzzy', qux: 'corge' });
 
     // Assert
-    q.all(deferreds).then(function () {
+    return q.all(deferreds).then(function () {
       log.timer('Log Messaging Demo'); // end the 'Log Messaging Demo' timer
 
       var output = log.finalizeLog(); // finalize the log, and return a json string of the log-defer
       var outputObj = JSON.parse(output);
 
-      expect(outputObj).to.be.defined;
+      expect(outputObj).to.exist;
     });
   });
 });
